@@ -1,0 +1,10 @@
+_id: ut_3ad4bea5449b4671993aed7ce9204e2f
+type: UnitTest
+parentId: uts_98eac64c63434daa9e90a7f94aa180b7
+modified: 1684834876774
+created: 1683120292431
+requestId: req_2c90128e49094feabe1a4860fbb8d49a
+name: Closing Price Returns 200
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);

@@ -1,0 +1,22 @@
+_id: ut_4d31fe9450c946de875ffd11bfa4d635
+type: UnitTest
+parentId: uts_fbff9cb21180427da84e0d8aee88c85f
+modified: 1684837936831
+created: 1684837426430
+requestId: req_2c90128e49094feabe1a4860fbb8d49a
+name: Verify AAPL date format
+code: |
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);
+
+  const body = JSON.parse(response1.data);
+  expect(body.result_data.AAPL).to.be.an('array');
+
+  const returned_date = body.result_data.AAPL[0].date;
+  let timestamp = Date.parse(returned_date);
+  console.log ("Date:", returned_date);
+  if (isNaN(timestamp)) {
+      console.log("Invalid date format");
+  } else {
+      console.log("Valid date format - YYYY-MM-DD");
+  }

@@ -1,0 +1,10 @@
+_id: ut_799b7cb36600449b88bbc8305cbd1b84
+type: UnitTest
+parentId: uts_98eac64c63434daa9e90a7f94aa180b7
+modified: 1684834879613
+created: 1683571877701
+requestId: req_65d5f2360c414d15b270a2b0edbcadd5
+name: Historical Price Returns 200
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);

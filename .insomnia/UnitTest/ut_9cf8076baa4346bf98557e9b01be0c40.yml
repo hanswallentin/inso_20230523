@@ -1,0 +1,16 @@
+_id: ut_9cf8076baa4346bf98557e9b01be0c40
+type: UnitTest
+parentId: uts_fbff9cb21180427da84e0d8aee88c85f
+modified: 1684836874430
+created: 1684835378573
+requestId: req_2c90128e49094feabe1a4860fbb8d49a
+name: Verify API Name Type & Content
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);
+
+  const body = JSON.parse(response1.data);
+  const api_name = body.meta_data.api_name;
+
+  expect(api_name).to.be.an('string');
+  console.log ("API Name:", api_name);

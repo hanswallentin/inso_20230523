@@ -1,0 +1,150 @@
+_id: spc_a13837485b5b4caa8d95b5a124bbaa4c
+type: ApiSpec
+parentId: wrk_5154ac1c27a44f24877561ddbb952166
+modified: 1684857889365
+created: 1683114668467
+fileName: stock_api.yaml
+contents: >
+  openapi: 3.0.0
+
+
+  info:
+    "title": "Stock API"
+    "description": "Stock Information Service - Sample demo OpenAPI Spec - API ID12345"
+    "version": "0.4"
+
+  servers:
+    - url: http://proxy.service-connectivity.com:80
+
+  #x-kong-plugin-openid-connect:
+
+  #    name: openid-connect
+
+  #    enabled: true
+
+  #    service: Stock_API
+
+  #    config:
+
+  #        issuer: https://keycloak.apim.eu/auth/realms/kong/.well-known/openid-configuration
+
+  #        client_id: ["client1"]
+
+  #        client_secret: ["aeb992d5-4be4-4125-857b-6210776321d2"]
+
+  #        ssl_verify: false
+
+  #        consumer_claim: ["email"]
+
+  #        verify_signature: false
+
+  #        verify_claims: true
+
+  #        authorization_endpoint: https://keycloak.apim.eu/auth/realms/kong/protocol/openid-connect/auth
+
+  #        redirect_uri: ["http://ec2-3-125-124-20.eu-central-1.compute.amazonaws.com:8000/oidcKeycloak"]
+
+  #        logout_query_arg: logout
+
+  #        logout_methods: ["GET"]
+
+  #        end_session_endpoint: https://keycloak.apim.eu/auth/realms/kong/protocol/openid-connect/logout
+
+  #        logout_revoke: true
+
+  #        logout_revoke_access_token: true
+
+  #        logout_revoke_refresh_token: true
+
+  #        logout_redirect_uri: ["http://ec2-3-125-124-20.eu-central-1.compute.amazonaws.com:8000/oidcKeycloak"]
+
+
+  #x-kong-plugin-mocking:
+
+  #  name: mocking
+
+  #  enabled: true
+
+  #  service: Stock_API
+
+  #  config:
+
+  #    api_specification_filename: oas_stockapi.yaml
+
+  #    random_delay: true
+
+  #    max_delay_time: 1
+
+  #    min_delay_time: 0.001
+
+  #    random_examples: true
+
+
+  paths:
+    /stock/historical:
+      get:
+        description: "Retreive historical stock closing prices"
+        operationId: GET /stock/historical
+        tags:
+          - Production
+        parameters:
+          - required: true
+            in: query
+            name: tickers
+            schema:
+              type: string
+        responses:
+          "200":
+            description: Status 200
+            content:
+              application/json:
+                examples:
+                  response:
+                    value:
+                      meta_data:
+                        api_name: historical_stock_price_v2
+                        num_total_data_points: 1
+                        credit_cost: 10
+                        start_date: yesterday
+                        end_date: yesterday
+                      result_data:
+                        AAPL:
+                          - date: 2000-04-23
+                            volume: 33
+                            high: 100.75
+                            low: 100.87
+                            adj_close: 275.03
+                            close: 100.03
+                            open: 100.87
+    /stock/closing:
+      get:
+        description: "Retreive closing price for stocks"
+        operationId: GET /stock/closing
+        tags:
+          - Beta
+        parameters:
+          - required: true
+            in: query
+            name: tickers
+            schema:
+              type: string
+        responses:
+          "200":
+            description: Status 200
+            content:
+              application/json:
+                examples:
+                  response:
+                    value:
+                      meta_data:
+                        api_name: closing_stock_price_v1
+                      result_data:
+                        AAPL:
+                          - date: 2000-06-23
+                            volume: 33
+                            high: 100.75
+                            low: 100.87
+                            adj_close: 275.03
+                            close: 100.03
+                            open: 100.87
+contentType: yaml

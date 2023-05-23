@@ -1,0 +1,14 @@
+_id: env_781f1340ab0044f8b0a9423ef341a692
+type: Environment
+parentId: env_269907f9ccc199685e734a6ef1b7d1cf25426850
+modified: 1683632743766
+created: 1683128981754
+name: Orsted AWSGW
+data:
+  base_URL: http://ec2-35-159-21-138.eu-central-1.compute.amazonaws.com
+dataPropertyOrder:
+  "&":
+    - base_URL
+color: null
+isPrivate: false
+metaSortKey: 1683114923739.5

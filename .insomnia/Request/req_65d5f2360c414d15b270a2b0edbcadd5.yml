@@ -1,0 +1,24 @@
+_id: req_65d5f2360c414d15b270a2b0edbcadd5
+type: Request
+parentId: wrk_5154ac1c27a44f24877561ddbb952166
+modified: 1684834838225
+created: 1684834759019
+url: "{{ _.base_URL }}/stock/historical"
+name: Historical Price
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: tickers
+    disabled: false
+    value: string
+headers: []
+authentication: {}
+metaSortKey: -1684834759019
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,16 @@
+_id: ut_e88ae1576cff4d49a0cca98be0e0f72b
+type: UnitTest
+parentId: uts_fbff9cb21180427da84e0d8aee88c85f
+modified: 1684837374032
+created: 1684836934915
+requestId: req_2c90128e49094feabe1a4860fbb8d49a
+name: Verify Result Data format
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);
+
+  const body = JSON.parse(response1.data);
+  expect(body.result_data.AAPL).to.be.an('array');
+
+  const result_data = body.result_data.AAPL[0];
+  console.log ("Result Data:", result_data);
