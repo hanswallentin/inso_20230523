@@ -8,10 +8,6 @@ jobs:
     steps:
     - name: Checkout branch
       uses: actions/checkout@v1
-    - name: Setup inso
-      uses: kong/setup-inso@v1
-      with:
-        inso-version: 3.5.0
     - name: Verify inso version
       run: inso --version
     - name: Lint
