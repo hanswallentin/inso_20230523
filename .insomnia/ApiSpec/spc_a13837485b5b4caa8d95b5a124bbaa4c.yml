@@ -1,7 +1,7 @@
 _id: spc_a13837485b5b4caa8d95b5a124bbaa4c
 type: ApiSpec
 parentId: wrk_5154ac1c27a44f24877561ddbb952166
-modified: 1684930638358
+modified: 1684931289859
 created: 1683114668467
 fileName: stock_api.yaml
 contents: >
@@ -10,7 +10,7 @@ contents: >
 
   info:
     title: Stock API
-    version: "0.6"
+    version: "0.7"
     description: "Stock Information Service - Sample demo OpenAPI Spec - API ID12345"
     contact:
       email: hans.wallentin@konghq.com
