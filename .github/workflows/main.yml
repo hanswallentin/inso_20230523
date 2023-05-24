@@ -1,0 +1,12 @@
+on:
+  push:
+    branches:
+      - DevHans1
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kong/setup-inso@v1
+        with:
+          inso-version: 3.5.0
+      - run: inso --version
