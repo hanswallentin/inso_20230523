@@ -3,7 +3,7 @@ on:
     branches:
       - DevHans1
 jobs:
-  test:
+  name: Validate API Spec and run Unit Test
     runs-on: self-hosted
     steps:
       - name: Checkout branch
