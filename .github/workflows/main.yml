@@ -27,5 +27,5 @@ jobs:
     - name: Export OAS to file
       run: inso export spec "stock_api.yaml" --output oas_stock_api.yaml
     - name: Upload OAS Spec to Developer Portal
-      run: http POST localhost:8001/default/files path=specs/oas_stock_api.yaml contents=@oas_stock_api.yaml
+      run: http POST localhost:8001/default/files path=specs/oas_stock_api.yaml contents=@oas_stock_api.yaml --ignore-stdin
 
