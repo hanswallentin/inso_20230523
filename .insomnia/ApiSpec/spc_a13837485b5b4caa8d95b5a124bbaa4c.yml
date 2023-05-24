@@ -1,7 +1,7 @@
 _id: spc_a13837485b5b4caa8d95b5a124bbaa4c
 type: ApiSpec
 parentId: wrk_5154ac1c27a44f24877561ddbb952166
-modified: 1684939076968
+modified: 1684939831894
 created: 1683114668467
 fileName: stock_api.yaml
 contents: >
@@ -10,7 +10,7 @@ contents: >
 
   info:
     title: Stock API
-    version: "0.8"
+    version: "0.9"
     description: "Stock Information Service - Sample demo OpenAPI Spec - API ID1645"
     contact:
       email: hans.wallentin@konghq.com
@@ -28,48 +28,27 @@ contents: >
 
 
     
-  #x-kong-plugin-openid-connect:
-
-  #    name: openid-connect
-
-  #    enabled: true
-
-  #    service: Stock_API
-
-  #    config:
-
-  #        issuer: https://keycloak.apim.eu/auth/realms/kong/.well-known/openid-configuration
-
-  #        client_id: ["client1"]
-
-  #        client_secret: ["aeb992d5-4be4-4125-857b-6210776321d2"]
-
-  #        ssl_verify: false
-
-  #        consumer_claim: ["email"]
-
-  #        verify_signature: false
-
-  #        verify_claims: true
-
-  #        authorization_endpoint: https://keycloak.apim.eu/auth/realms/kong/protocol/openid-connect/auth
-
-  #        redirect_uri: ["http://ec2-3-125-124-20.eu-central-1.compute.amazonaws.com:8000/oidcKeycloak"]
-
-  #        logout_query_arg: logout
-
-  #        logout_methods: ["GET"]
-
-  #        end_session_endpoint: https://keycloak.apim.eu/auth/realms/kong/protocol/openid-connect/logout
-
-  #        logout_revoke: true
-
-  #        logout_revoke_access_token: true
-
-  #        logout_revoke_refresh_token: true
-
-  #        logout_redirect_uri: ["http://ec2-3-125-124-20.eu-central-1.compute.amazonaws.com:8000/oidcKeycloak"]
-
+  x-kong-plugin-openid-connect:
+      name: openid-connect
+      enabled: true
+      service: Stock_API
+      config:
+          issuer: https://keycloak.apim.eu/auth/realms/kong/.well-known/openid-configuration
+          client_id: ["client1"]
+          client_secret: ["aeb992d5-4be4-4125-857b-6210776321d2"]
+          ssl_verify: false
+          consumer_claim: ["email"]
+          verify_signature: false
+          verify_claims: true
+          authorization_endpoint: https://keycloak.apim.eu/auth/realms/kong/protocol/openid-connect/auth
+          redirect_uri: ["http://ec2-3-74-215-36.eu-central-1.compute.amazonaws.com:8000/oidcKeycloak"]
+          logout_query_arg: logout
+          logout_methods: ["GET"]
+          end_session_endpoint: https://keycloak.apim.eu/auth/realms/kong/protocol/openid-connect/logout
+          logout_revoke: true
+          logout_revoke_access_token: true
+          logout_revoke_refresh_token: true
+          logout_redirect_uri: ["http://ec2-3-74-215-36.eu-central-1.compute.amazonaws.com:8000/oidcKeycloak"]
 
   #x-kong-plugin-mocking:
 
