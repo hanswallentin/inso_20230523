@@ -13,7 +13,7 @@ jobs:
       with:
         inso-version: 3.5.0
     - name: Verify inso version
-    - run: inso --version
+      run: inso --version
     - name: Lint
       run: inso lint spec "stock_api.yaml" --ci
     - name: Run test suite 1
