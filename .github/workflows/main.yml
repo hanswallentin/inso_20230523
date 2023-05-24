@@ -21,4 +21,10 @@ jobs:
     - name: Run test suite 2
       run: inso run test "Data Type Tests Suite" --env "Kong EMEA ProxyDemo" --ci
     - name: Generate declarative config
-      run: inso generate config "stock_api.yaml" --type declarative --ci
+      run: inso generate config "stock_api.yaml" --type declarative --ci --output "kong_config_stock_api.yaml"
+    - name: Verify connectivity to Kong Gateway
+      run: deck ping
+    - name: Validate configuration
+      run: deck validate -s "kong_config_stock_api.yaml"
+    - name: Upload configuration to Kong Gateway
+      run: deck sync -s "kong_config_stock_api.yaml" --workspace default --select-tag APIOps
