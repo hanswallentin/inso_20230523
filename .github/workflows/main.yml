@@ -4,19 +4,19 @@ on:
       - DevHans1
 jobs:
   name: Validate API Spec and run Unit Test
-    runs-on: self-hosted
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v1
-     -  uses: kong/setup-inso@v1
-        with:
-          inso-version: 3.5.0
-      - name: Verify inso version
-      - run: inso --version
-      - name: Lint
-        run: inso lint spec "stock_api.yaml" --ci
-      - name: Run test suites
-        run: inso run test "200 Tests" --env "Kong EMEA ProvyDemo" --ci
-        run: inso run test "Data Type Tests Suite" --env "Kong EMEA ProvyDemo" --ci
-      - name: Generate declarative config
-        run: inso generate config "Designer Demo" --type declarative --ci
+  runs-on: self-hosted
+  steps:
+    - name: Checkout branch
+      uses: actions/checkout@v1
+   -  uses: kong/setup-inso@v1
+      with:
+        inso-version: 3.5.0
+    - name: Verify inso version
+    - run: inso --version
+    - name: Lint
+      run: inso lint spec "stock_api.yaml" --ci
+    - name: Run test suites
+      run: inso run test "200 Tests" --env "Kong EMEA ProvyDemo" --ci
+      run: inso run test "Data Type Tests Suite" --env "Kong EMEA ProvyDemo" --ci
+    - name: Generate declarative config
+      run: inso generate config "Designer Demo" --type declarative --ci
