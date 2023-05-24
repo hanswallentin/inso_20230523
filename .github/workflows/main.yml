@@ -25,5 +25,6 @@ jobs:
     - name: Upload configuration to Kong Gateway
       run: deck sync -s "kong_config_stock_api.yaml" --workspace default --select-tag APIOps
     - name: Upload OAS Spec to Developer Portal
-      run: http POST localhost:8001/default/files path=specs/stock_api.yaml contents=@stock_api.yaml
+      run: inso export spec "stock_api.yaml" --output oas_stock_api.yaml
+      run: http POST localhost:8001/default/files path=specs/oas_stock_api.yaml contents=@oas_stock_api.yaml
 
