@@ -1,7 +1,7 @@
 _id: req_2c90128e49094feabe1a4860fbb8d49a
 type: Request
 parentId: wrk_5154ac1c27a44f24877561ddbb952166
-modified: 1684834853417
+modified: 1685004108484
 created: 1684834759024
 url: "{{ _.base_URL }}/stock/closing"
 name: Closing Price
