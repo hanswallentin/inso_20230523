@@ -1,7 +1,7 @@
 _id: spc_a13837485b5b4caa8d95b5a124bbaa4c
 type: ApiSpec
 parentId: wrk_5154ac1c27a44f24877561ddbb952166
-modified: 1686209181345
+modified: 1686209451467
 created: 1683114668467
 fileName: stock_api.yaml
 contents: >
@@ -10,15 +10,14 @@ contents: >
 
   info:
     title: Stock API
-    version: "1.05"
+    version: "1.06"
     description: "Stock Information Service - Sample demo OpenAPI Spec - API ID1645"
     contact:
       email: hans.wallentin@konghq.com
 
   servers:
     - url: http://proxy.service-connectivity.com:80
-    - url: http://ec2-3-127-25-211.eu-central-1.compute.amazonaws.com:8000
-
+  #  - url: http://ec2-3-127-25-211.eu-central-1.compute.amazonaws.com:8000
 
 
     
