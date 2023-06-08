@@ -1,7 +1,7 @@
 _id: spc_a13837485b5b4caa8d95b5a124bbaa4c
 type: ApiSpec
 parentId: wrk_5154ac1c27a44f24877561ddbb952166
-modified: 1686209451467
+modified: 1686212474752
 created: 1683114668467
 fileName: stock_api.yaml
 contents: >
@@ -10,7 +10,7 @@ contents: >
 
   info:
     title: Stock API
-    version: "1.06"
+    version: "1.07"
     description: "Stock Information Service - Sample demo OpenAPI Spec - API ID1645"
     contact:
       email: hans.wallentin@konghq.com
@@ -87,6 +87,23 @@ contents: >
   #    min_delay_time: 0.001
 
   #    random_examples: true
+
+
+  #x-kong-plugin-rate-limiting:
+
+  #  name: rate-limiting
+
+  #  enabled: true
+
+  #  service: Stock_API
+
+  #  config:
+
+  #    second: 5
+
+  #    hour: 10000
+
+  #    policy: local
 
 
   paths:
